@@ -1,0 +1,276 @@
+/*
+File Name: style.less
+Date: 11/30/2020
+Programmer: Jessica Cassidy
+*/
+
+@import 'palette.less';
+@import 'mixins.less';
+
+/* MOBILE STYLESHEET */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.5em;
+    color: @darkColor;
+}
+
+h1 {
+  font-weight: 700;
+  .headingStyle(@color3; 1.6em);
+  padding-top: .8em;
+  text-align: center;
+}
+
+h2 {
+    font-weight: 500;
+    .headingStyle(@color2; 1.1em);
+    padding-top: .8em;
+}
+
+a {
+    text-decoration: none;
+    &:link {
+        .headingStyle(@color4; .9em);
+    }
+    &:visited {
+        .headingStyle(@color3; 1.1em);
+    }
+    &:hover {
+        .cursor-pointer;
+        .headingStyle(@color4; .8em);
+    }
+}
+
+main {
+    background-color: @lightColor;
+}
+
+footer {
+    background-color: @color2;
+    color: @lightColor;
+    .gradient(left; @lightColor2; @color2);
+}
+footer h2 {
+    color: @lightColor;
+    font-size: 1em;
+}
+
+.hoverTable {
+    width: 100%; 
+    border-collapse: collapse; 
+}
+
+table {
+    margin-bottom: 1.5em;
+    th, td {
+        padding: 3px;
+        text-align: left;
+        border-bottom: 1px solid @color3;
+      }
+      
+    tr:hover {
+        background-color: @color2;
+    }
+}
+
+#copyrighttext {
+  float: right;
+  font-family: 'Roboto', sans-serif;
+  font-size: .7em;
+  color: @color4;
+}
+
+#capybaraimg6 {
+  width: 300px;
+}
+
+/*TABLET STYLESHEET
+The following CSS affects all screen sizes larger than 480 pixels wide.*/
+
+/*LANDSCAPE*/
+@media only screen and (min-width: 479px) {
+    
+    main, footer {
+        padding: 1.5em;
+    
+    }
+    
+    footer ul li {
+        text-align: left;
+        padding-bottom: 1em;
+        font-size: .8em;
+        list-style-type: none;
+    
+    }
+}
+
+
+/*PORTRAIT*/
+@media only screen and (min-width: 320px) {
+    
+    main, footer {
+        padding: 1.5em;
+    
+    }
+    
+    footer ul li {
+        text-align: left;
+        padding-bottom: 1em;
+        font-size: .8em;
+        list-style-type: none;
+    
+    }
+    
+
+    /* HAMBURGER NAV MOBILE */
+    /* Code From: Code Pen user mutedblues: https://codepen.io/mutedblues/pen/MmPNPG */
+    body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background-color: @lightColor;
+      }
+      
+      a {
+        color: @lightColor;
+      }
+      
+      /* header */
+      
+      .header {
+        .gradient(left; @lightColor; @color2);
+        box-shadow: 1px 1px 4px 0 @greyColor4;
+        position: fixed;
+        width: 100%;
+        z-index: 3;
+      }
+      
+      .header ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+        // .gradient(left; @lightColor; @color2);
+      }
+      
+      .header li a {
+        display: block;
+        padding: 20px 20px;
+        border-right: 1px solid @lightColor;
+        text-decoration: none;
+      }
+      
+      .header li a:hover,
+      .header .menu-btn:hover {
+        background-color: @lightColor;
+        color: @color2;
+      }
+      
+      .header .logo {
+        display: block;
+        float: left;
+        font-size: 2em;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: @lightColor;
+      }
+      
+      /* menu */
+      
+      .header .menu {
+        clear: both;
+        max-height: 0;
+        transition: max-height .2s ease-out;
+      }
+      
+      /* menu icon */
+      
+      .header .menu-icon {
+        cursor: pointer;
+        display: inline-block;
+        float: right;
+        padding: 28px 20px;
+        position: relative;
+        user-select: none;
+      }
+      
+      .header .menu-icon .navicon {
+        background: @color5;
+        display: block;
+        height: 2px;
+        position: relative;
+        transition: background .2s ease-out;
+        width: 18px;
+      }
+      
+      .header .menu-icon .navicon:before,
+      .header .menu-icon .navicon:after {
+        background: @color5;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+      }
+      
+      .header .menu-icon .navicon:before {
+        top: 5px;
+      }
+      
+      .header .menu-icon .navicon:after {
+        top: -5px;
+      }
+      
+      /* menu btn */
+      
+      .header .menu-btn {
+        display: none;
+      }
+      
+      .header .menu-btn:checked ~ .menu {
+        max-height: 400px;
+      }
+      
+      .header .menu-btn:checked ~ .menu-icon .navicon {
+        background: transparent;
+      }
+      
+      .header .menu-btn:checked ~ .menu-icon .navicon:before {
+        transform: rotate(-45deg);
+      }
+      
+      .header .menu-btn:checked ~ .menu-icon .navicon:after {
+        transform: rotate(45deg);
+      }
+      
+      .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+      .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+        top: 0;
+      }
+      
+}
+
+
+/*DESKTOP STYLESHEET
+The following CSS affects all screen sizes larger than 1024 pixels wide.*/
+
+@media only screen and (min-width: 1025px) {
+    /* HAMBURGER NAV DESKTOP */
+    /* Code From: Code Pen user mutedblues: https://codepen.io/mutedblues/pen/MmPNPG */
+    .header li {
+        float: left;
+    }
+    .header li a {
+        padding: 20px 30px;
+    }
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+    .header .menu-icon {
+        display: none;
+    }
+}
