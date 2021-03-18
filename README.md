@@ -1,4 +1,4 @@
-# Project - Cavies Website
+# Cavies Website
 **Created By:** Jessica Cassidy
 
 This was a final project for my Intermediate CSS and Preprocessor course at community college. 
