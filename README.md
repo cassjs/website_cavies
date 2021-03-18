@@ -6,7 +6,7 @@ The objective of the final was to create a mobile-first responsive website using
 our choice while utilzing Wikipedia information on those animals. 
 
 ## Built With:
-CSS
+LESS
 
 ## Preview:
 **Desktop:**
